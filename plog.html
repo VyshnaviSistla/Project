@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		body{
+			background-image:url('https://e1.pxfuel.com/desktop-wallpaper/721/613/desktop-wallpaper-abstract-login-page-thumbnail.jpg');
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		.login{
+			background-image: linear-gradient(#124CA2,#3DBDFF);
+			width: 25%;
+			border: 3px solid black;
+			border-radius: 15px;
+			padding: 3%;
+			margin: 35%;
+			margin-top:15%;
+			text-align: center;
+		}
+		.btn-login>a{
+			text-decoration: none;
+			color: black;
+		}
+        .user{
+        	color: black;
+        }
+        
+  
+	</style>
+</head>
+<body>
+	<div class="login">
+		<h1>USER LOGIN</h1>
+		<form id="login-form">
+		<p ><input placeholder="e-mail" name="e-mail" id="e-mail" type="email"/></p>
+		<p ><input placeholder="enter Password" name="password" id="password" type="password" /></p>
+		<button class="btn-login" type="submit">Login</button>
+	    </form>
+	</div>
+<script type="text/javascript">
+	document.getElementById('login-form').addEventListener('submit', function(event) {
+  event.preventDefault();
+  const email = document.getElementById('e-mail').value;
+  const password = document.getElementById('password').value;
+  if (email === 'admin@example.com' && password === 'password') {
+    alert('Login Successful');
+  } else {
+    alert('Invalid username or password');
+  }
+});
+</script>
+
+</body>
+</html>

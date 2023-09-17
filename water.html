@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Water Intake Calculator</title>
+    <script src="https://kit.fontawesome.com/409b945416.js" crossorigin="anonymous"></script>
+    <style>
+        .navbar {
+            text-align: center;
+            background-color: #0B0B45;
+            padding: 2%;
+            border-radius: 15px;
+            margin: auto;
+            width: 35vw;
+        }
+        .navbar > a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 1%;
+        }
+        .navbar > a > select {
+            font-size: 18px;
+            border: none;
+        }
+        .navbar > .sign-in {
+            border-radius: 15px;
+            border: none;
+        }
+        .calculator {
+            margin: auto;
+            padding: 2%;
+            border-radius: 5px;
+            background-color: skyblue;
+            width: 20vw;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <nav class="navbar">
+            <a href="">Fitness Tracker</a>
+            <a href="index.html">Home</a>
+            <a href="">Water Intake</a>
+            <a href="health-plans.html">Health Plans</a>
+        </nav>
+    </p>
+    <p>
+    <div class="calculator">
+        <h1><u><i class="fa-solid fa-glass-water"></i>
+        WATER INTAKE CALCULATOR</u></h1>
+        <p> 
+            <select id="gender">
+                <option value="Select gender">Select gender</option>
+                <option value="female">Female</option>
+                <option value="male">Male</option>
+            </select>
+        </p>
+        <p>
+            Age <br>
+            <input id="age" type="number" name="age" placeholder="Enter your age"/> 
+        </p>
+        <p>
+            Weather <br>
+            <select id="weather">
+                <option>Weather</option>
+                <option value="cool">Cool</option>
+                <option value="mild">Mild</option>
+                <option value="warm">Warm</option>
+                <option value="hot">Hot</option>
+            </select> 
+        </p> 
+        <p> 
+            <button id="calculate">Calculate</button> 
+        </p>
+        <p>Recommended water intake: <span id="result"> </span> ml</p>
+    </div>
+    </p>
+    <script type="text/javascript">
+        document.getElementById("calculate").addEventListener("click", function () {
+            const gender = document.getElementById("gender").value;
+            const age = parseInt(document.getElementById("age").value);
+            const weather = document.getElementById("weather").value;
+            const waterIntake = calculateWaterIntake(gender, age, weather);
+            document.getElementById("result").textContent = ` ${waterIntake}`;
+        });
+
+        function calculateWaterIntake(gender, age, weather) {
+            let waterIntake = 0;
+
+            if (gender === "female") 
+            {
+                if (age >= 9 && age <= 13) 
+                {
+                    waterIntake = 2100;
+                } 
+                else if (age >= 14 && age <= 18) 
+                {
+                    waterIntake = 2300;
+                } 
+                else if (age >= 19 && age <= 30) 
+                {
+                    waterIntake = 2700;
+                }
+                else if (age >= 50) 
+                {
+                    waterIntake = 2900;
+                }
+            } 
+            else if (gender === "male") 
+            {
+                if (age >= 9 && age <= 13) 
+                {
+                    waterIntake = 2400;
+                }
+                else if (age >= 14 && age <= 18) 
+                {
+                    waterIntake = 3300;
+                } 
+                else if (age >= 19 && age <= 30) 
+                {
+                    waterIntake = 3700;
+                } 
+                else if (age >= 50) 
+                {
+                    waterIntake = 3900;
+                }
+            }
+            if (weather === "cool") 
+            {
+                waterIntake -= 200;
+            } 
+            else if (weather === "hot") 
+            {
+                waterIntake += 200;
+            }
+
+            return waterIntake;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		body{
+			background-image:linear-gradient(to left,#D3D3D3,#7D7D7D);
+		}
+		.Signup{
+			background-color: #696969;
+			width: 25%;
+			border: 3px solid black;
+			border-radius: 15px;
+			padding: 1%;
+			margin: 35%;
+			margin-top:15%;
+			text-align: center;
+		}
+		.btn-signup>a{
+			text-decoration: none;
+			color: black;
+		}
+        .user{
+        	color: black;
+        }
+  
+	</style>
+</head>
+<body>
+	<div class="Signup">
+		<h1>Sign up</h1>
+		<form id="signup-form">
+		<p ><input placeholder="username" name="username" id="username" type="text"/></p>
+		<p ><input placeholder="e-mail" name="e-mail" id="e-mail" type="email"/></p>
+		<p ><input placeholder="enter Password" name="password" id="password" type="password" /></p>
+		<p ><input placeholder="confirm Password" name="password" id="cpassword" type="password" /></p>
+		<button class="btn-signup" type="submit">Sign up</button>
+	    </form>
+	</div>
+<script type="text/javascript">
+	document.getElementById('signup-form').addEventListener('submit', function(event) {
+  event.preventDefault();
+  const username = document.getElementById('username').value;
+  const email = document.getElementById('e-mail').value;
+  const password = document.getElementById('password').value;
+  const confirmPassword = document.getElementById('cpassword').value;
+  if (username && email && password && confirmPassword) {
+    if (password === confirmPassword) {
+      alert('Registration Successful');
+      document.getElementById('signup-form').reset();
+    } else {
+      alert('Passwords do not match');
+    }
+  } else {
+    alert('Please fill in all fields');
+  }
+});
+</script>
+
+</body>
+</html>

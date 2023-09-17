@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <style>
+        .navbar {
+            padding: 2%;
+        }
+        .navbar>a{
+            color: black;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 1%;
+        }
+        .navbar>a>select {
+            font-size: 18px;
+            border: none;
+        }
+        .navbar>.sign-in {
+            border-radius: 15px; 
+            border: none;
+        }
+
+        body {
+            background-image: url('https://media.istockphoto.com/id/1343403562/photo/weight-loss-fitness-and-counting-calories-concept.jpg?s=612x612&w=0&k=20&c=o3WGfKPJ7HVkMPGQWm_ioxS40g0xs7ygqK4KgSou6AY=');
+            background-attachment: fixed;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .one {
+            color: whitesmoke;
+            padding: 3%;
+            text-align: center;
+            font-size: 22px;
+            border: 1px solid blue;
+            background-image: linear-gradient(to left,#000428,#004e92);
+            border-radius: 5px;
+            margin-left: 35%;
+            margin-right: 35%;
+            margin-top: 12%;
+        }
+    </style>
+</head>
+<body>
+     <nav class="navbar">
+        <a href="">Fitness Tracker</a>
+        <a href="index.html">Home</a>
+        <a href="">Water Intake</a>
+        <a href="health-plans.html">Health Plans</a>
+    </nav>
+    <div class="one">
+        <h1><u>Count Your Calories</u></h1>
+        <label for="exerciseHours">Time spent on exercise (in hours):</label><br>
+        <input type="number" id="exerciseHours" placeholder="Enter number of hours">
+        <button id="calculateButton">Calculate Calories Burnt</button>
+        <h2>Amount of calories burnt:</h2>
+        <p id="calorieResult"></p>
+    </div>
+
+    <script>
+        function calorieCount(hours) {
+            if (hours >= 0.5) {
+                if (hours >= 1.5) {
+                    return "Calories Burnt: 300-500 calories (for males) or 240-400 calories (for females)";
+                } else if (hours >= 1) {
+                    return "Calories Burnt: 240-400 calories (for males) or 200-300 calories (for females)";
+                } else if (hours >= 0.75) {
+                    return "Calories Burnt: 120-200 calories (for both males and females)";
+                } else {
+                    return "Calories Burnt: 80-120 calories (for both males and females)";
+                }
+            } else {
+                return "Please enter a valid number of hours (minimum 0.5 hours).";
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("calculateButton").addEventListener("click", function () {
+                var exerciseHours = parseFloat(document.getElementById("exerciseHours").value);
+                var calorieResult = document.getElementById("calorieResult");
+
+                if (!isNaN(exerciseHours) && exerciseHours >= 0.5) {
+                    calorieResult.textContent = calorieCount(exerciseHours);
+                } else {
+                    calorieResult.textContent = "Please enter a valid number of hours (minimum 0.5 hours).";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
