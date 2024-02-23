@@ -6,21 +6,33 @@
 	<title></title>
 	<style type="text/css">
 		body{
-			background-image:linear-gradient(to left,#D3D3D3,#7D7D7D);
+		 background-image: url("https://newskillsacademy.co.uk/assets/cdn/media/2021-03/fitness-1-f99bbb6e516492dce463af4ffec94bd6.jpg");
+                 background-size: cover;
 		}
 		.Signup{
-			background-color: #696969;
-			width: 25%;
-			border: 3px solid black;
-			border-radius: 15px;
-			padding: 1%;
-			margin: 35%;
-			margin-top:15%;
-			text-align: center;
-		}
+            background-color: rgb(255,255,255,0.8);
+            width: 25%;
+            border: 3px solid rgb(149, 145, 145);
+            border-radius: 15px;
+            padding: 1%; 
+            text-align: center;
+            margin: auto;
+            margin-top: 15%;
+        }
+        .btn-signup {
+          background-color: black;
+          color: aliceblue;
+            border: 2px solid black;
+            border-radius: 25px;
+            padding: 10px 20px; 
+            font-size: 16px; 
+            cursor: pointer;
+        }
 		.btn-signup>a{
 			text-decoration: none;
 			color: black;
+			border: 2px solid black;
+             border-radius: 25px;
 		}
         .user{
         	color: black;
@@ -32,7 +44,7 @@
 	<div class="Signup">
 		<h1>Sign up</h1>
 		<form id="signup-form">
-		<p ><input placeholder="username" name="username" id="username" type="text"/></p>
+		<p class="user"><input placeholder="username" name="username" id="username" type="text"/></p>
 		<p ><input placeholder="e-mail" name="e-mail" id="e-mail" type="email"/></p>
 		<p ><input placeholder="enter Password" name="password" id="password" type="password" /></p>
 		<p ><input placeholder="confirm Password" name="password" id="cpassword" type="password" /></p>
