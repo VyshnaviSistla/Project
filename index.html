@@ -13,8 +13,7 @@
        
         .navbar {
             text-align: center;
-            background-image: linear-gradient(to left,#01c2d8,#d26f49,#c997f1
-);
+            background-image: linear-gradient(to left,#01c2d8,#d26f49,#c997f1);
             padding: 1.5%;
             font-family:"Georgia",serif;
         }
@@ -127,6 +126,104 @@
         .sleep:hover{
            transform: scale(1.1);
         }
+       
+@media screen and (min-width: 395px) and (max-width: 420px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .fimg {
+        width: 70%;
+    }
+
+    .flex {
+        flex-direction: column;
+    }
+
+    .exe, .food, .sleep {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+@media screen and (min-width: 480px) and (max-width: 576px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .fimg {
+        width: 60%;
+    }
+
+    .flex {
+        flex-direction: column;
+    }
+
+    .exe, .food, .sleep {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .fimg {
+        width: 50%;
+    }
+
+    .flex {
+        flex-direction: column;
+    }
+
+    .exe, .food, .sleep {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .fimg {
+        width: 40%;
+    }
+
+    .flex {
+        flex-direction: column;
+    }
+
+    .exe, .food, .sleep {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .fimg {
+        width: 30%;
+    }
+
+    .flex {
+        flex-direction: column;
+    }
+
+    .exe, .food, .sleep {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+
     </style>
 </head>
 <body>
@@ -148,10 +245,10 @@
                 <a href="eximg.html" target="_blank">10 Exercises <br>
                 1 hour 30 minutes</a>
            
-             <div class="exercise-input">
-        <input type="number" min="0" max="10" placeholder="">
-    </div>
-     </p>
+            <div class="exercise-input">
+                  <input type="number" min="0" max="10" placeholder="">
+            </div>
+            </p>
         </div> 
         <div class="food">
             <p>
@@ -164,9 +261,10 @@
                 <i class="fa-solid fa-bed"></i>
                 8 hours sleep
             <div class="exercise-input">
-        <input type="number" min="0" max="8" placeholder="">
-    </div>
-    </p>
+                  <input type="number" min="0" max="8" placeholder="">
+            </div>
+           
+        </p>
         </div> 
     </div>
 </body>
